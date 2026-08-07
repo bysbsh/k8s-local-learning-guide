@@ -1,4 +1,4 @@
-# Kubernetes 本地学习实战教程（傻瓜式分篇版）
+# 从零学 Kubernetes：macOS 本地实战指南
 
 这是一套按实际学习过程整理的分篇教程，适用于 macOS + Docker Desktop + Kind。每篇可以独立导入飞书，也可以从第 0 篇开始按编号照着做。
 

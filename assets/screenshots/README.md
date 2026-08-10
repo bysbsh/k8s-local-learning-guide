@@ -11,6 +11,7 @@
 | `02-gitops-storage.png` | Argo CD Synced 与 PVC Bound | 已完成 | 第 5、6 篇 |
 | `03-configmap-page.jpg` | ConfigMap 提供的 Nginx 页面 | 已完成 | 第 3 篇 |
 | `04-custom-image-v2.jpg` | 自建镜像 v2 页面 | 已完成 | 第 7 篇 |
+| `05-argocd-resource-tree.jpg` | Argo CD Application 分组资源树 | 已完成 | 第 5 篇 |
 
 ## 截图统一要求
 
@@ -21,6 +22,7 @@
 - 不显示密码、Token、私钥、kubeconfig、私人仓库地址和真实生产 IP。
 - 终端用户名和本机主机名只在本人明确同意时保留；本仓库的截图已获得同意。
 - 终端截图优先保存 PNG，网页截图可以保存 JPEG。
+- Argo CD 等管理界面截图不应包含 Git 提交者的真实邮箱。
 - 动态 Pod 名、IP、年龄和提交哈希可以保留，它们用于说明真实环境，但正文不能依赖这些固定值。
 
 ## 01：集群与 Deployment

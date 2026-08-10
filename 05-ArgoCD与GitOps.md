@@ -370,6 +370,14 @@ kubectl get application k8s-study -n argocd \
 
 > 截图下半部的 PVC 是第 6 篇的存储实验。命令在终端里自动换行只是显示宽度不足，不会改变命令的含义。
 
+### 在管理界面查看资源树
+
+打开 `https://localhost:8082/applications`，点击 `k8s-study`，然后选择 `Tree` 视图。开启分组显示后，可以更容易地核对 Application 管理的资源类型和数量：
+
+![Argo CD 中 k8s-study Application 的分组资源树](./assets/screenshots/05-argocd-resource-tree.jpg)
+
+图中的连线表示 Application 与受管资源的关系。Service、Deployment 和 Ingress 按类型折叠，ConfigMap、Namespace 和 PVC 则单独显示。绿色状态图标表示资源已同步，或已达到它的健康条件。
+
 ## 8. Argo CD 为什么有时同步较慢
 
 本地 Argo CD 没有 GitHub Webhook，通常每 2～3 分钟轮询仓库一次。

@@ -98,6 +98,10 @@ cd k8s-local-learning-guide
 本仓库保存适合公开和复用的教材与示例；个人 Argo CD 实验仓库继续独立维护，避免
 实验中的临时修改、凭据或环境配置进入公共教程。
 
+关键结果截图及统一的 iTerm2 捕获规范见
+[assets/screenshots](./assets/screenshots/README.md)。截图只作为成功状态的视觉核对，
+正文中的命令和文字输出仍是主要学习材料。
+
 ## 学完后的完整链路
 
 ```text

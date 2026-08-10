@@ -225,6 +225,10 @@ storage-demo   Bound   pvc-...   100Mi   RWO
 
 `Bound` 表示 PVC 已绑定到实际 PV。
 
+![iTerm2 中 PVC storage-demo 处于 Bound 状态](./assets/screenshots/02-gitops-storage.png)
+
+> 截图上半部是第 5 篇的 Argo CD 同步结果；本节重点看下半部 `storage-demo` 的 `STATUS=Bound`。
+
 查看具体是哪个 Pod 引用：
 
 ```bash

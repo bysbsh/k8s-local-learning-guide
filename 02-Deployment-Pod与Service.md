@@ -215,6 +215,17 @@ kubectl rollout undo deployment/web
 
 ## 9. 本篇完成标准
 
+完成后，可以用下面两条命令同时核对节点和 Deployment 状态：
+
+```bash
+kubectl get nodes
+kubectl get deployments -n k8s-study
+```
+
+![iTerm2 中的 Kind 节点和 Deployment 正常运行](./assets/screenshots/01-cluster-ready.png)
+
+> 图中还包含后续篇章创建的 Deployment，你在本篇刚完成时看到的名称和数量可能更少。判断成功的关键是 `READY`、`UP-TO-DATE` 和 `AVAILABLE` 数量一致。
+
 - 能解释 Deployment、ReplicaSet 和 Pod 的关系。
 - 知道 Pod 名和 IP 都可能变化。
 - 能用 Service 为多个 Pod 提供固定入口。

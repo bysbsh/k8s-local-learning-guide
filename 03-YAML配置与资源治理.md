@@ -370,6 +370,10 @@ kubectl port-forward service/web-service -n k8s-study 8080:80
 
 浏览器打开 `http://localhost:8080`。看到 `Hello from Kubernetes` 后，回到终端按 `Ctrl+C`。
 
+![ConfigMap 提供的 Nginx 页面](./assets/screenshots/03-configmap-page.jpg)
+
+> 成功页面：Nginx 从 `web-content` ConfigMap 挂载并返回自定义 `index.html`。
+
 ## 10. 目录与挂载常见误区
 
 - Namespace 只负责资源隔离，不会自动共享目录。

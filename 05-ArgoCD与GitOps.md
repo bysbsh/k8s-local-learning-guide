@@ -359,6 +359,17 @@ kubectl get application k8s-study -n argocd \
   -o jsonpath='{.status.sync.revision}{"\n"}'
 ```
 
+也可以用一条命令同时显示应用名、同步状态和 Git 版本：
+
+```bash
+kubectl get application k8s-study -n argocd \
+  -o 'custom-columns=NAME:.metadata.name,SYNC:.status.sync.status,REVISION:.status.sync.revision'
+```
+
+![iTerm2 中 Argo CD 显示 Synced 并输出 Git revision](./assets/screenshots/02-gitops-storage.png)
+
+> 截图下半部的 PVC 是第 6 篇的存储实验。命令在终端里自动换行只是显示宽度不足，不会改变命令的含义。
+
 ## 8. Argo CD 为什么有时同步较慢
 
 本地 Argo CD 没有 GitHub Webhook，通常每 2～3 分钟轮询仓库一次。

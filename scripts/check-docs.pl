@@ -9,7 +9,7 @@ use File::Spec;
 binmode STDOUT, ':encoding(UTF-8)';
 binmode STDERR, ':encoding(UTF-8)';
 
-my @files = split /\n/, `git -c core.quotePath=false ls-files '*.md'`;
+my @files = split /\n/, `git -c core.quotePath=false ls-files --cached --others --exclude-standard -- '*.md'`;
 my $failed = 0;
 
 for my $file (@files) {

@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Kubernetes 官方文档
+    url: https://kubernetes.io/zh-cn/docs/home/
+    about: 查询 Kubernetes 标准资源和命令的官方说明

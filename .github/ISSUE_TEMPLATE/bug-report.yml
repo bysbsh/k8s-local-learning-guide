@@ -1,0 +1,81 @@
+name: 教程问题反馈
+description: 报告失效命令、内容错误、版本差异或不清楚的步骤
+title: "[问题] "
+labels:
+  - bug
+body:
+  - type: markdown
+    attributes:
+      value: |
+        感谢反馈。请提供可以复现问题的信息，并在提交前删除密码、Token、私钥、kubeconfig 和其他敏感内容。
+
+  - type: dropdown
+    id: chapter
+    attributes:
+      label: 对应篇章
+      options:
+        - 第 0 篇：从零安装本地 Kubernetes 环境
+        - 第 1 篇：学习地图与环境准备
+        - 第 2 篇：Deployment、Pod 与 Service
+        - 第 3 篇：YAML、配置与资源治理
+        - 第 4 篇：Helm、Traefik 与 Ingress
+        - 第 5 篇：Argo CD 与 GitOps
+        - 第 6 篇：PVC、PV 与持久化存储
+        - 第 7 篇：自建镜像与滚动发布
+        - 第 8 篇：常见故障排查手册
+        - 第 9 篇：命令速查、清理与下一步
+        - 第 10 篇：Kubernetes 术语索引
+        - 第 11 篇：从 Kind 走向生产环境
+        - examples 配套示例
+        - README 或其他内容
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: 问题描述
+      description: 说明执行到哪一步、期望看到什么、实际发生了什么。
+    validations:
+      required: true
+
+  - type: textarea
+    id: environment
+    attributes:
+      label: 环境版本
+      description: 请提供 Mac 芯片、macOS、Docker、kubectl、Kind、Kubernetes 和 Helm 版本。
+      placeholder: |
+        Chip: Apple Silicon / Intel
+        macOS:
+        Docker:
+        kubectl:
+        Kind:
+        Kubernetes:
+        Helm:
+    validations:
+      required: true
+
+  - type: textarea
+    id: output
+    attributes:
+      label: 执行的命令与完整输出
+      description: 不要只截取最后一行错误；请先删除敏感信息。
+      render: shell
+    validations:
+      required: true
+
+  - type: textarea
+    id: attempts
+    attributes:
+      label: 已经尝试过什么
+      description: 例如重新执行、查看 Events、检查命名空间或阅读第 8 篇。
+
+  - type: checkboxes
+    id: safety
+    attributes:
+      label: 提交前确认
+      options:
+        - label: 我已经删除密码、Token、SSH 私钥、kubeconfig 和其他敏感信息。
+          required: true
+        - label: 我没有把终端提示符或教程中的预期输出当作命令执行。
+          required: true

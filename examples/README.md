@@ -3,6 +3,19 @@
 这里保存各篇教程对应的完整示例文件。它们是个人 GitOps 实验仓库的脱敏版本，不包含
 Token、密码、SSH 私钥或真实生产配置。
 
+## 获取示例
+
+先克隆仓库并进入仓库根目录：
+
+```bash
+cd ~
+git clone https://github.com/bysbsh/k8s-local-learning-guide.git
+cd k8s-local-learning-guide
+```
+
+后续所有以 `examples/` 开头的命令都必须在这个目录中执行。已经克隆过时，不要重复
+执行 `git clone`，进入原目录后执行 `git pull` 即可。
+
 ## 目录
 
 | 目录 | 内容 | 对应教程 |
@@ -57,6 +70,9 @@ kubectl apply -f examples/01-basic-web/ingress.yaml
 ```
 
 ## Helm 示例
+
+这个示例会创建 Traefik Ingress。请先按照第 4 篇安装 Traefik；未安装时 Helm 仍可能
+安装成功，但 `helm-web.localhost` 没有 Controller 负责转发。
 
 先渲染检查，不修改集群：
 

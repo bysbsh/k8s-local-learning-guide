@@ -6,6 +6,40 @@
 
 > 本教程于 2026 年 8 月在 macOS Apple Silicon 环境完成实测。工具更新后，界面或输出可能略有差异，但核心资源关系和排查方法不变。
 
+## 适合谁
+
+- 第一次接触 Kubernetes，希望在 Mac 上完整操作一次的学习者。
+- 已经会使用 Docker，但还分不清 Pod、Deployment、Service 和 Ingress 的开发者。
+- 希望理解 Helm、Argo CD 和 GitOps 基本工作方式的初学者。
+
+不要求提前购买服务器，也不要求拥有 Rancher、云平台或生产集群。
+
+## 快速开始
+
+只阅读教程时，可以直接从[第 0 篇](./00-从零安装本地Kubernetes环境.md)开始。
+
+需要使用配套示例时，先把本仓库克隆到 Mac：
+
+```bash
+cd ~
+git clone https://github.com/bysbsh/k8s-local-learning-guide.git
+cd k8s-local-learning-guide
+```
+
+教程操作产生的个人 GitOps 文件仍保存在独立的 `~/k8s-study` 目录，不会修改这份公共教程。
+
+## 适用范围与限制
+
+本教程构建的是**单节点本地学习环境**，目标是理解 Kubernetes 对象和发布流程，不是可直接复制的生产部署方案。
+
+- Kind 节点运行在 Docker Desktop 中，Mac 或 Docker 停止后集群不可用。
+- `kubectl port-forward` 是临时调试入口，终端退出后入口消失。
+- `*.localhost`、`imagePullPolicy: Never` 和 Kind 本地镜像只适合本机实验。
+- 示例没有覆盖生产所需的高可用、正式域名、HTTPS、备份、监控和完整安全策略。
+- `replace-me`、`dev` 配置和演示 Secret 不能直接用于真实环境。
+
+完成本地主线后，请阅读[第 11 篇：从 Kind 走向生产环境](./11-从Kind走向生产环境.md)，了解 K3s、LoadBalancer 和生产入口的区别。
+
 ## 跟做规则
 
 1. 每次只执行一个代码块，确认成功后再继续。
@@ -53,6 +87,7 @@
 8. [常见故障排查手册](./08-常见故障排查手册.md)
 9. [命令速查、清理与下一步](./09-命令速查清理与下一步.md)
 10. [Kubernetes 术语索引](./10-术语索引.md)
+11. [从 Kind 走向生产环境](./11-从Kind走向生产环境.md)
 
 ## 配套示例
 
@@ -93,6 +128,7 @@ Argo CD 自动同步到 Kubernetes
 - 第 7 篇完成自己的镜像从 v1 到 v2 的发布。
 - 第 8、9 篇适合保留为日常参考手册。
 - 第 10 篇用于随时查询术语，并快速返回对应的详细篇章。
+- 第 11 篇解释本地实验与服务器、云集群和生产环境之间的差距。
 
 > 学习原则：先理解 YAML 和 Kubernetes 对象，再使用 Rancher 等管理平台。这样才能知道界面操作实际修改了什么。
 
@@ -101,6 +137,18 @@ Argo CD 自动同步到 Kubernetes
 - 不要向 Issue、截图或 Git 提交真实 Token、密码和 SSH 私钥。
 - 教程中的 `replace-me`、`YOUR_GITHUB_USERNAME` 都是占位符。
 - 用于学习的 GitOps 仓库与真实生产配置应分开管理。
+
+## 问题反馈
+
+跟做时发现命令失效、描述不清或版本差异，可以[提交 Issue](https://github.com/bysbsh/k8s-local-learning-guide/issues/new/choose)。请提供对应篇章、完整错误和工具版本；提交前删除 Token、密码、私钥、kubeconfig 和其他敏感信息。
+
+修改文档或示例后，可以在仓库根目录执行：
+
+```bash
+bash scripts/validate.sh
+```
+
+同一套检查也会在 GitHub 的每次 push 和 Pull Request 中自动执行。
 
 ## License
 

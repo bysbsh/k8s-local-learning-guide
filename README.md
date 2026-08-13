@@ -26,6 +26,8 @@ git clone https://github.com/bysbsh/k8s-local-learning-guide.git
 cd k8s-local-learning-guide
 ```
 
+想直接发布到 CSDN，可使用[单篇文章版](./CSDN-从零学Kubernetes-macOS本地实战.md)；文章已包含完整教程入口和 GitHub 源码链接。
+
 教程操作产生的个人 GitOps 文件仍保存在独立的 `~/k8s-study` 目录，不会修改这份公共教程。
 
 ## 适用范围与限制
